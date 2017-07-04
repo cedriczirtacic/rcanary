@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use Config;
 use Carp;
-use Data::Dumper;
 
 # a_type AT_RANDOM == 25 (https://github.com/lattera/glibc/blob/master/elf/elf.h#L947)
 use constant AT_RANDOM => 25;
