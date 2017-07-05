@@ -74,7 +74,7 @@ sub read_memory($$) {
 
 sub get_canary($) {
     my $pid = shift;
-    warn "[-] No auxiliar information for pid $pid. Next." and next if (!-r "/proc/$pid/auxv");
+    warn "[-] No auxiliar information for pid $pid. Next." and return if (!-r "/proc/$pid/auxv");
     
     my $addr;
     return if !get_at_random_address($pid, $addr);
