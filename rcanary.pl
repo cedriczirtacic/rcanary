@@ -65,6 +65,7 @@ sub read_memory($$) {
     seek(M, $addr, 0);
     read(M, $r_t, $arch{len});
     $canary = unpack($arch{pack}, $r_t);
+    $canary &= ~0xff;
 
     printf("[+] Canary for pid $pid: %x\n", $canary);
 
